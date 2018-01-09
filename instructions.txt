@@ -1,0 +1,30 @@
+Find below skywalk custom database manger with classes and usage. 
+
+Install the Cordova and Ionic Native plugins:
+
+ionic cordova plugin add cordova-sqlite-storage
+npm install --save ionix-sqlite
+
+
+
+   build on: https://github.com/mirkonasato/ionix-sqlite
+
+1. Add the service folder with database-manager.ts
+
+2. Remove unwanted tables from the database manager and change name of database
+Import all modules
+3. Add the models folder with classes needed for the database manager.
+
+4. import { DatabaseManagerService } from '../services/database-manager'; in the app.module.ts and declare in the provider
+
+example to call methods:
+   import { DatabaseManagerService } from '../../services/database-manager';
+   constructor:    public _dbService: DatabaseManagerService
+   method:
+
+   this._dbService.insertRecordOrSaveBatch('hymnbook',result.hymbooks).then(result => {
+   //do nothing
+      },
+   error => {
+   console.error("Error : " + error.message);
+   });
